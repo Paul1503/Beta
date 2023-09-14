@@ -1,0 +1,29 @@
+.password-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+}
+
+.txt-recuperar{
+    color: rgb(100, 100, 100);;
+}
+
+ion-item{
+    margin: 30px auto;
+}
+
+.btn-recuperar{
+    margin-bottom: 56px;
+}
+
+.item-has-focus{
+    --highlight-background: var(--ion-color-mycolor);
+}
+  
+  /* color del cursor del input*/
+  .ion-valid.sc-ion-input-md-h {
+    --highlight-color: var(--ion-color-mycolor);
+}

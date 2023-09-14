@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-title>Bienvenido {{ username }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h2 class="txt-fecha">Fecha y hora de hoy</h2>
+  <div class="calendar">
+    <ion-datetime locale="es-CL" [firstDayOfWeek]="1" class="anular-max-width" color="mycolor">
+      <span slot="time-label">Hora</span>
+    </ion-datetime>
+  </div>
+</ion-content>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home">
+      <ion-icon name="home-sharp" color="mycolor"></ion-icon>
+      <ion-label color="medium">Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="calendar">
+      <ion-icon name="calendar-sharp" color="mycolor"></ion-icon>
+      <ion-label color="medium">Horario</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="qr-code">
+      <ion-icon name="qr-code-sharp" color="mycolor"></ion-icon>
+      <ion-label color="medium">Registra</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="megaphone">
+      <ion-icon name="megaphone-sharp" color="mycolor"></ion-icon>
+      <ion-label color="medium">Avisos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="person">
+      <ion-icon name="person-sharp" color="mycolor"></ion-icon>
+      <ion-label color="medium">Perfil</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

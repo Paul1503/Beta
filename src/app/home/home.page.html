@@ -1,0 +1,47 @@
+<ion-content class="ion-padding content-container">
+  <div class="div-logo-duoc">
+    <img src="/assets/logo-duoc.png" alt="">
+    <hr>
+    <h1 class="logo-registrapp">Registr<span>APP</span></h1>
+  </div>
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <div class="block">
+        <ion-toolbar>
+          <h1 class="txt-bienvenido">Bienvenido</h1>
+          <p class="txt-credenciales">Ingrese sus credenciales</p>
+        </ion-toolbar>   
+        <ion-list class="ion-padding">
+          <!--Campo para ingreso de usuario-->
+          <ion-item class="custom-input">
+            <ion-icon slot="start" name="person" color="mycolor"></ion-icon>
+            <ion-label position="floating" color="medium">Nombre de usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="username"></ion-input>
+          </ion-item>
+
+          <!--Campo para ingreso de contraseña-->
+          <ion-item class="custom-input">
+            <ion-icon slot="start" name="lock-closed" color="mycolor"></ion-icon>
+            <ion-label position="floating" color="medium">Contraseña</ion-label>
+            <ion-input class=".ion-valid.sc-ion-input-md-h" type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div>
+          <!--Boton para iniciar sesión-->
+          <ion-button class="btn-custom" shape="round" color="mycolor" (click)="login()" size="large">Iniciar
+            sesión</ion-button>
+
+          <!--Restablecer contraseña-->
+          <p class="link-recuperar">
+            Olvidaste tu contraseña? Recupérala
+            <a (click)="cerrarModal()" [routerLink]="['/restablecer']">aquí</a>.
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <div class="button-container ion-text-center ion-align-items-end">
+    <ion-button id="open-modal" expand="block" shape="round" size="large" color="mycolor" class="btn-comenzar">Comenzar</ion-button>
+  </div>
+</ion-content>
