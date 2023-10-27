@@ -20,10 +20,13 @@ const routes: Routes = [
     path: 'bienvenida/:username',
     loadChildren: () => import('./bienvenida/bienvenida.module').then( m => m.BienvenidaPageModule)
   },
+<<<<<<< HEAD
   {
     path: 'horario',
     loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule)
   },
+=======
+>>>>>>> ed8ff63867f57c9729694ba612af13facf2215ce
 ];
 
 @NgModule({
