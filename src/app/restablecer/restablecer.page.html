@@ -9,13 +9,13 @@
 
 <ion-content [fullscreen]="true">
   <div class="password-container">
-    <h2 class="txt-recuperar">Ingrese su nombre de usuario para continuar</h2>
+    <h2 class="txt-recuperar">Ingrese su correo institucional para continuar</h2>
     <ion-list>
       <!--Ingreso de usuario para recuperar contraseña-->
       <ion-item>
         <ion-icon slot="start" name="person" color="mycolor"></ion-icon>
-        <ion-label position="floating" color="medium">Nombre de usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="username"></ion-input>
+        <ion-label position="floating" color="medium">Correo electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="email" required></ion-input>
       </ion-item>
     </ion-list>
     <ion-button class="btn-recuperar" shape="round" color="mycolor" (click)="recuperar()">Recuperar</ion-button>

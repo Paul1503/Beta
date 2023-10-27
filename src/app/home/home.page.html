@@ -9,14 +9,14 @@
       <div class="block">
         <ion-toolbar>
           <h1 class="txt-bienvenido">Bienvenido</h1>
-          <p class="txt-credenciales">Ingrese sus credenciales</p>
         </ion-toolbar>   
+        <p class="txt-credenciales">Ingrese sus credenciales</p>
         <ion-list class="ion-padding">
           <!--Campo para ingreso de usuario-->
           <ion-item class="custom-input">
             <ion-icon slot="start" name="person" color="mycolor"></ion-icon>
-            <ion-label position="floating" color="medium">Nombre de usuario</ion-label>
-            <ion-input type="text" [(ngModel)]="username"></ion-input>
+            <ion-label position="floating" color="medium">Correo electrónico</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
           </ion-item>
 
           <!--Campo para ingreso de contraseña-->

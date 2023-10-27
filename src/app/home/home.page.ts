@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';//Importamos el servicio
+import { UserService } from '../user.service';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -10,41 +10,37 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  //Creamos variable para el login
-  username: String = '';
+  email: string = '';
   password: string = '';
-  
-  constructor(private toastController: ToastController, 
-              private router: Router,
-              private userService: UserService,
-              private modalController: ModalController) {}
+  username: string = ''; // Declarar la variable aquí
 
-  //Logica para autenticar un usuario
-  login(){
+  constructor(
+    private toastController: ToastController,
+    private router: Router,
+    private userService: UserService,
+    private modalController: ModalController
+  ) {}
+
+  login() {
     const usuarioEncontrado = this.userService.usuarios.find(
-      (user) => user.username === this.username &&
-       user.password === this.password);
-  
-    //Inicio de sesion
-    //redirigir a la pagina de bienvenida
-    if(usuarioEncontrado){
+      (user) => user.email === this.email && user.password === this.password
+    );
+
+    if (usuarioEncontrado) {
+      this.username = usuarioEncontrado.username;
       this.router.navigate(['/bienvenida', this.username]);
       this.modalController.dismiss();
-    }else{
-      //En el caso que se equivoque el usuario mostrar mensaje de error
-      //Llamamos al metodo 
+    } else {
       this.mostrarError();
     }
   }
 
-  //Funcion para mensaje de alerta  
   async mostrarError() {
     const toast = await this.toastController.create({
       message: 'Credenciales incorrectas',
       duration: 2000,
       position: 'middle',
-      color: 'danger'
+      color: 'danger',
     });
 
     await toast.present();
@@ -53,5 +49,4 @@ export class HomePage {
   cerrarModal() {
     this.modalController.dismiss();
   }
-
 }

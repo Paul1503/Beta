@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./restablecer.page.scss'],
 })
 export class RestablecerPage implements OnInit {
-  username: String ='';
+  email: String ='';
 
 
   constructor(private toastController: ToastController,
@@ -19,11 +19,11 @@ export class RestablecerPage implements OnInit {
 
   recuperar(){
     const usuarioEncontrado = this.userService.usuarios.find(
-      (user) => user.username === this.username
+      (user) => user.email === this.email
     );
 
     if(usuarioEncontrado){
-      this.mostrar(`${usuarioEncontrado.username} su contraseña es :  ${usuarioEncontrado.password}`);
+      this.mostrar(`${usuarioEncontrado.email} su contraseña es :  ${usuarioEncontrado.password}`);
       this.router.navigate(['/home'])
 
     }else{
