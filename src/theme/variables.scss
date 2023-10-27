@@ -70,31 +70,29 @@
   /** light **/
   --ion-color-light: #f4f5f8;
   --ion-color-light-rgb: 244, 245, 248;
-  --ion-color-light-contrast: #5c5c5c;
+  --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
-	--ion-color-mycolor: #39BAC0;
+  --ion-color-mycolor: #39bac0;
 	--ion-color-mycolor-rgb: 57,186,192;
 	--ion-color-mycolor-contrast: #ffffff;
 	--ion-color-mycolor-contrast-rgb: 0,0,0;
 	--ion-color-mycolor-shade: #32a4a9;
 	--ion-color-mycolor-tint: #4dc1c6;
 
-	--ion-color-mycolor2: #b6002b;
-	--ion-color-mycolor2-rgb: 182,0,43;
-	--ion-color-mycolor2-contrast: #ffffff;
-	--ion-color-mycolor2-contrast-rgb: 255,255,255;
-	--ion-color-mycolor2-shade: #a00026;
-	--ion-color-mycolor2-tint: #bd1a40;
-
+  .ion-color-mycolor {
+    --ion-color-base: var(--ion-color-mycolor);
+    --ion-color-base-rgb: var(--ion-color-mycolor-rgb);
+    --ion-color-contrast: var(--ion-color-mycolor-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-mycolor-contrast-rgb);
+    --ion-color-shade: var(--ion-color-mycolor-shade);
+    --ion-color-tint: var(--ion-color-mycolor-tint);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-
-@media (prefers-color-scheme: dark) {
-
   /*
    * Dark Colors
    * -------------------------------------------
@@ -164,6 +162,13 @@
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
 
+    --ion-color-mycolor: #39bac0;
+    --ion-color-mycolor-rgb: 57,186,192;
+    --ion-color-mycolor-contrast: #383a3e;
+    --ion-color-mycolor-contrast-rgb: 0,0,0;
+    --ion-color-mycolor-shade: #32a4a9;
+    --ion-color-mycolor-tint: #4dc1c6;
+  
     .ion-color-mycolor {
       --ion-color-base: var(--ion-color-mycolor);
       --ion-color-base-rgb: var(--ion-color-mycolor-rgb);
@@ -172,16 +177,6 @@
       --ion-color-shade: var(--ion-color-mycolor-shade);
       --ion-color-tint: var(--ion-color-mycolor-tint);
     }
-
-    .ion-color-mycolor2 {
-      --ion-color-base: var(--ion-color-mycolor2);
-      --ion-color-base-rgb: var(--ion-color-mycolor2-rgb);
-      --ion-color-contrast: var(--ion-color-mycolor2-contrast);
-      --ion-color-contrast-rgb: var(--ion-color-mycolor2-contrast-rgb);
-      --ion-color-shade: var(--ion-color-mycolor2-shade);
-      --ion-color-tint: var(--ion-color-mycolor2-tint);
-    }
-  }
   }
 
   /*
@@ -234,7 +229,7 @@
    */
 
   .md body {
-    --ion-background-color: #121212;
+    --ion-background-color: #1f1f1f;
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
@@ -270,4 +265,12 @@
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+html {
+  /* 
+   * For more information on dynamic font scaling, visit the documentation:
+   * https://ionicframework.com/docs/layout/dynamic-font-scaling
+   */
+  --ion-dynamic-font: var(--ion-default-dynamic-font);
 }
